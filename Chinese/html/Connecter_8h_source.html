@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>玉兔远程控制: /home/runner/work/RabbitRemoteControl/RabbitRemoteControl/Client/Connecter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="app.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">玉兔远程控制<span id="projectnumber">&#160;v0.0.26</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Connecter.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Author: Kang Lin &lt;kl222@126.com&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef CCONNECTER_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define CCONNECTER_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtPlugin&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QDataStream&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QIcon&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QMimeData&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QSettings&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;client_export.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="classCPluginClient.html">CPluginClient</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="classCConnect.html">CConnect</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="classCParameterConnecter.html">CParameterConnecter</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span><a class="code hl_class" href="classCParameterClient.html">CParameterClient</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span><a class="code hl_class" href="classCClient.html">CClient</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classCConnecter.html">   60</a></span><span class="keyword">class </span>CLIENT_EXPORT <a class="code hl_class" href="classCConnecter.html">CConnecter</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_OBJECT</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classCConnecter.html">CConnecter</a>(<a class="code hl_class" href="classCPluginClient.html">CPluginClient</a> *parent);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classCConnecter.html">~CConnecter</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QString Id();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QString Name();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QString Description();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QString Protocol() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">virtual</span> qint16 Version() = 0;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QIcon Icon() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classCConnecter.html#a7c0ed151c37e50f082150b5c0497d37a">  118</a></span>    <span class="keyword">virtual</span> QWidget* <a class="code hl_function" href="classCConnecter.html#a7c0ed151c37e50f082150b5c0497d37a">GetViewer</a>() = 0;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> OpenDialogSettings(QWidget* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Load(QString szFile = QString());</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Save(QString szFile = QString());</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">public</span> Q_SLOTS:</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classCConnecter.html#ae1b13c7a656217d1fb48676755b232e5">  167</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_slot" href="classCConnecter.html#ae1b13c7a656217d1fb48676755b232e5">Connect</a>() = 0;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classCConnecter.html#a23807f9c3949298bddcc8aa76b6889b4">  183</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_slot" href="classCConnecter.html#a23807f9c3949298bddcc8aa76b6889b4">DisConnect</a>() = 0;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> slotSetClipboard(QMimeData *data);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> slotSetServerName(<span class="keyword">const</span> QString &amp;szName);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>Q_SIGNALS:</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classCConnecter.html#a3399ba54112b1fabe133ac204a726f6f">  197</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#a3399ba54112b1fabe133ac204a726f6f">sigConnected</a>();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classCConnecter.html#aba9467320f4244675d3cca45daf937d0">  206</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#aba9467320f4244675d3cca45daf937d0">sigDisconnect</a>();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classCConnecter.html#a94d21575459fcee33fa23c8477991780">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#a94d21575459fcee33fa23c8477991780">sigDisconnected</a>();</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classCConnecter.html#a0b79a9aa7448a14330a18c6dfe1d5f9e">  216</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#a0b79a9aa7448a14330a18c6dfe1d5f9e">sigUpdateName</a>(<span class="keyword">const</span> QString&amp; szName);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">void</span> sigError(<span class="keyword">const</span> <span class="keywordtype">int</span> nError, <span class="keyword">const</span> QString &amp;szError);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classCConnecter.html#af594d49db5b65702e4bc80babbebafb6">  231</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#af594d49db5b65702e4bc80babbebafb6">sigInformation</a>(<span class="keyword">const</span> QString&amp; szInfo);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classCConnecter.html#afe1d2bab293617d446a3de202333e87a">  246</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#afe1d2bab293617d446a3de202333e87a">sigShowMessage</a>(<span class="keyword">const</span> QString&amp; title, <span class="keyword">const</span> QString&amp; message,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                        <span class="keyword">const</span> QMessageBox::Icon&amp; icon = QMessageBox::Information);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classCConnecter.html#afd84121829ba0819c61b34d5c2a485b0">  253</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classCConnecter.html#afd84121829ba0819c61b34d5c2a485b0">sigUpdateParameters</a>(<a class="code hl_class" href="classCConnecter.html">CConnecter</a>* pConnecter);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>Q_SIGNALS:</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordtype">void</span> sigClipBoardChanged();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classCConnecter.html#acf7eb8ded9a814d59b269038ff776d63">  276</a></span>    <span class="keyword">virtual</span> QDialog* <a class="code hl_function" href="classCConnecter.html#acf7eb8ded9a814d59b269038ff776d63">GetDialogSettings</a>(QWidget* parent = <span class="keyword">nullptr</span>) = 0;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Load(QSettings &amp;set) = 0;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Save(QSettings &amp;set) = 0;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classCParameterConnecter.html">CParameterConnecter</a>* GetParameter();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> SetParameter(<a class="code hl_class" href="classCParameterConnecter.html">CParameterConnecter</a>* p);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> SetParameterClient(<a class="code hl_class" href="classCParameterClient.html">CParameterClient</a>* pPara);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keyword">virtual</span> QString ServerName();</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keyword">static</span> QObject* createObject(<span class="keyword">const</span> QString &amp;className, QObject* parent = NULL);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keyword">private</span> Q_SLOTS:</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordtype">void</span> slotShowServerName();</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordtype">void</span> slotUpdateName();</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> slotBlockShowWidget(<span class="keyword">const</span> QString&amp; className, <span class="keywordtype">int</span> &amp;nRet, <span class="keywordtype">void</span>* pContext);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> slotBlockShowMessage(<span class="keyword">const</span> QString&amp; szTitle,</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                                      <span class="keyword">const</span> QString&amp; szMessage,</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                                      QMessageBox::StandardButtons buttons,</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                                      QMessageBox::StandardButton&amp; nRet,</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                                      <span class="keywordtype">bool</span> &amp;checkBox,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                                      QString szCheckBoxContext = QString());</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> slotBlockInputDialog(<span class="keyword">const</span> QString&amp; szTitle,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                                      <span class="keyword">const</span> QString&amp; szLable,</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                                      <span class="keyword">const</span> QString&amp; szMessage,</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                                      QString&amp; szText</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                                      );</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keyword">const</span> <a class="code hl_class" href="classCPluginClient.html">CPluginClient</a>* m_pPluginClient;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keyword">friend</span> <a class="code hl_class" href="classCClient.html">CClient</a>;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    QString m_szServerName;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="comment">// The owner is a derived class of this class</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <a class="code hl_class" href="classCParameterConnecter.html">CParameterConnecter</a>* m_pParameter;</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>};</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="preprocessor">#endif </span><span class="comment">// CCONNECTER_H</span></div>
+<div class="ttc" id="aclassCClient_html"><div class="ttname"><a href="classCClient.html">CClient</a></div><div class="ttdoc">管理插件和连接者</div><div class="ttdef"><b>Definition:</b> <a href="Client_8h_source.html#l00048">Client.h:49</a></div></div>
+<div class="ttc" id="aclassCConnect_html"><div class="ttname"><a href="classCConnect.html">CConnect</a></div><div class="ttdoc">具体连接接口。它由协议插件实现。 它默认启动一个定时器来开启一个非 Qt 事件循环（就是普通的循环处理）。 详见： Connect()、 slotTimeOut()、 OnProcess() 。 当然，...</div><div class="ttdef"><b>Definition:</b> <a href="Connect_8h_source.html#l00051">Connect.h:52</a></div></div>
+<div class="ttc" id="aclassCConnecter_html"><div class="ttname"><a href="classCConnecter.html">CConnecter</a></div><div class="ttdoc">描述连接者应用接口。</div><div class="ttdef"><b>Definition:</b> <a href="Connecter_8h_source.html#l00060">Connecter.h:61</a></div></div>
+<div class="ttc" id="aclassCConnecter_html_a0b79a9aa7448a14330a18c6dfe1d5f9e"><div class="ttname"><a href="classCConnecter.html#a0b79a9aa7448a14330a18c6dfe1d5f9e">CConnecter::sigUpdateName</a></div><div class="ttdeci">void sigUpdateName(const QString &amp;szName)</div></div>
+<div class="ttc" id="aclassCConnecter_html_a23807f9c3949298bddcc8aa76b6889b4"><div class="ttname"><a href="classCConnecter.html#a23807f9c3949298bddcc8aa76b6889b4">CConnecter::DisConnect</a></div><div class="ttdeci">virtual int DisConnect()=0</div><div class="ttdoc">关闭连接</div></div>
+<div class="ttc" id="aclassCConnecter_html_a3399ba54112b1fabe133ac204a726f6f"><div class="ttname"><a href="classCConnecter.html#a3399ba54112b1fabe133ac204a726f6f">CConnecter::sigConnected</a></div><div class="ttdeci">void sigConnected()</div><div class="ttdoc">连接成功信号。仅由插件触发</div></div>
+<div class="ttc" id="aclassCConnecter_html_a7c0ed151c37e50f082150b5c0497d37a"><div class="ttname"><a href="classCConnecter.html#a7c0ed151c37e50f082150b5c0497d37a">CConnecter::GetViewer</a></div><div class="ttdeci">virtual QWidget * GetViewer()=0</div><div class="ttdoc">得到显示视图</div></div>
+<div class="ttc" id="aclassCConnecter_html_a94d21575459fcee33fa23c8477991780"><div class="ttname"><a href="classCConnecter.html#a94d21575459fcee33fa23c8477991780">CConnecter::sigDisconnected</a></div><div class="ttdeci">void sigDisconnected()</div><div class="ttdoc">断开连接成功信号。仅由插件触发</div></div>
+<div class="ttc" id="aclassCConnecter_html_aba9467320f4244675d3cca45daf937d0"><div class="ttname"><a href="classCConnecter.html#aba9467320f4244675d3cca45daf937d0">CConnecter::sigDisconnect</a></div><div class="ttdeci">void sigDisconnect()</div><div class="ttdoc">通知用户断开连接。仅由插件触发。 当从插件中需要要断开连接时触发。例如：对端断开连接、重置连接或者连接出错。</div></div>
+<div class="ttc" id="aclassCConnecter_html_acf7eb8ded9a814d59b269038ff776d63"><div class="ttname"><a href="classCConnecter.html#acf7eb8ded9a814d59b269038ff776d63">CConnecter::GetDialogSettings</a></div><div class="ttdeci">virtual QDialog * GetDialogSettings(QWidget *parent=nullptr)=0</div><div class="ttdoc">得到设置对话框</div></div>
+<div class="ttc" id="aclassCConnecter_html_ae1b13c7a656217d1fb48676755b232e5"><div class="ttname"><a href="classCConnecter.html#ae1b13c7a656217d1fb48676755b232e5">CConnecter::Connect</a></div><div class="ttdeci">virtual int Connect()=0</div><div class="ttdoc">开始连接</div></div>
+<div class="ttc" id="aclassCConnecter_html_af594d49db5b65702e4bc80babbebafb6"><div class="ttname"><a href="classCConnecter.html#af594d49db5b65702e4bc80babbebafb6">CConnecter::sigInformation</a></div><div class="ttdeci">void sigInformation(const QString &amp;szInfo)</div><div class="ttdoc">中主窗口中显示信息</div></div>
+<div class="ttc" id="aclassCConnecter_html_afd84121829ba0819c61b34d5c2a485b0"><div class="ttname"><a href="classCConnecter.html#afd84121829ba0819c61b34d5c2a485b0">CConnecter::sigUpdateParameters</a></div><div class="ttdeci">void sigUpdateParameters(CConnecter *pConnecter)</div><div class="ttdoc">Update parameters, notify application to save or show parameters.</div></div>
+<div class="ttc" id="aclassCConnecter_html_afe1d2bab293617d446a3de202333e87a"><div class="ttname"><a href="classCConnecter.html#afe1d2bab293617d446a3de202333e87a">CConnecter::sigShowMessage</a></div><div class="ttdeci">void sigShowMessage(const QString &amp;title, const QString &amp;message, const QMessageBox::Icon &amp;icon=QMessageBox::Information)</div><div class="ttdoc">从后台线程中触发在主线程中显示消息对话框(QMessageBox)，不阻塞后台线程</div></div>
+<div class="ttc" id="aclassCParameterClient_html"><div class="ttname"><a href="classCParameterClient.html">CParameterClient</a></div><div class="ttdoc">客户端库(CClient)参数接口。它包含客户端库(CClient)的参数。 或者插件需要使用的参数的初始化值。此类仅在客户端库(CClient)和插件内有效。 应用程序不能直接访问，只能通过 CCli...</div><div class="ttdef"><b>Definition:</b> <a href="ParameterClient_8h_source.html#l00042">ParameterClient.h:43</a></div></div>
+<div class="ttc" id="aclassCParameterConnecter_html"><div class="ttname"><a href="classCParameterConnecter.html">CParameterConnecter</a></div><div class="ttdoc">连接参数接口。它包含基本参数。此类仅在插件内有效。 应用程序不能直接访问，只能通过 CConnecter::OpenDialogSettings 进行设置。</div><div class="ttdef"><b>Definition:</b> <a href="ParameterConnecter_8h_source.html#l00046">ParameterConnecter.h:47</a></div></div>
+<div class="ttc" id="aclassCPluginClient_html"><div class="ttname"><a href="classCPluginClient.html">CPluginClient</a></div><div class="ttdoc">客户端插件接口。建立 CConnecter 实例，它由协议插件实现。 可以与 CConnecterDesktopThread 一起使用，用于连接是阻塞模型的。</div><div class="ttdef"><b>Definition:</b> <a href="PluginClient_8h_source.html#l00027">PluginClient.h:28</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>
